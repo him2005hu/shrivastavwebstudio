@@ -1,0 +1,905 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Shrivastav Website Studio | Engineered for Excellence</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e2e7ff",
+                    "secondary-container": "#fb7800",
+                    "surface-container-low": "#f2f3ff",
+                    "on-surface": "#131b2e",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#dae2fd",
+                    "on-secondary-container": "#592600",
+                    "tertiary-container": "#595ce7",
+                    "secondary": "#994700",
+                    "tertiary": "#3f40cd",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "on-tertiary-container": "#f3f0ff",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "on-secondary-fixed": "#321200",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#e1e0ff",
+                    "on-primary-fixed-variant": "#003cac",
+                    "on-error-container": "#93000a",
+                    "surface": "#faf8ff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#07006c",
+                    "tertiary-fixed-dim": "#c0c1ff",
+                    "on-surface-variant": "#424656",
+                    "primary-container": "#0b5fff",
+                    "surface-dim": "#d2d9f4",
+                    "on-tertiary": "#ffffff",
+                    "background": "#faf8ff",
+                    "inverse-primary": "#b5c4ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#0051e0",
+                    "secondary-fixed-dim": "#ffb68b",
+                    "on-primary-container": "#eff0ff",
+                    "secondary-fixed": "#ffdbc8",
+                    "on-primary-fixed": "#00164d",
+                    "outline-variant": "#c3c5d9",
+                    "surface-variant": "#dae2fd",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-fixed-variant": "#753400",
+                    "inverse-on-surface": "#eef0ff",
+                    "surface-container": "#eaedff",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#283044",
+                    "primary": "#0049cc",
+                    "outline": "#737687",
+                    "surface-bright": "#faf8ff",
+                    "on-background": "#131b2e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-md": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "stack-sm": "12px",
+                    "container-max": "1280px",
+                    "stack-lg": "48px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #0049cc 0%, #3f40cd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #e2e7ff;
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary/20">
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-[20px] border-b border-white/20 shadow-lg">
+<nav class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<a href="#home" class="flex items-center gap-3">
+  <img src="https://i.ibb.co/ynKPzJxr/logo.png" alt="Shrivastav web Studio logo" class="h-10 sm:h-12 md:h-14 w-auto rounded-xl object-contain bg-white/80 p-1 shadow-sm">
+  <div class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">
+    Shrivastav <span class="text-primary">web Studio</span>
+  </div>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="#home">Home</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#portfolio">Portfolio</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+<a class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md uppercase tracking-widest hover:shadow-[0_0_20px_rgba(11,95,255,0.4)] transition-all" href="tel:+919354114810">Let's Build</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface" id="home">
+<!-- STITCH_SHADER_START:ANIMATION_10 class="absolute inset-0 w-full h-full opacity-40" -->
+<div class="absolute inset-0 w-full h-full opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_10" style="display:block;width:100%;height:100%" width="1280" height="1024"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_10');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+    float time = u_time * 0.2;
+    
+    vec3 color1 = vec3(0.043, 0.373, 1.0); // #0B5FFF
+    vec3 color2 = vec3(1.0, 0.478, 0.0); // #FF7A00
+    vec3 color3 = vec3(1.0, 1.0, 1.0); // White
+    
+    float noise = sin(uv.x * 10.0 + time) * cos(uv.y * 10.0 - time);
+    noise += sin(uv.y * 5.0 + time * 1.5) * cos(uv.x * 8.0 - time * 0.5);
+    
+    vec3 finalColor = mix(color1, color2, uv.x + noise * 0.1);
+    finalColor = mix(finalColor, color3, uv.y + noise * 0.05);
+    
+    gl_FragColor = vec4(finalColor * 0.9, 0.15); // Subtle background
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_10 -->
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-20">
+<div class="reveal active">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-[12px] uppercase tracking-widest mb-6">Premium Web Solutions</span>
+<h1 class="font-display-lg text-display-lg leading-tight mb-6">
+                    We Build <span class="hero-gradient-text">Fast, Modern</span> &amp; Professional Websites
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    We create responsive, SEO-friendly, business websites designed to convert visitors into customers. Your vision, engineered for excellence.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md uppercase tracking-widest flex items-center justify-center gap-2 hover:shadow-xl hover:translate-y-[-2px] transition-all" href="#contact">
+                        Get Started
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="glass-card text-primary px-8 py-4 rounded-xl font-label-md uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-white/40 transition-all border-2 border-primary/20" href="https://wa.me/919354114810" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                        Contact on WhatsApp
+                    </a>
+</div>
+</div>
+<div class="relative reveal active">
+<div class="relative z-20 transform rotate-[-4deg] hover:rotate-0 transition-transform duration-700">
+<div class="bg-surface-container-high rounded-3xl p-2 shadow-2xl">
+<img class="rounded-2xl w-full h-auto shadow-inner" data-alt="A premium 3D render of a sleek laptop displaying a highly polished professional corporate website with glassmorphism elements, vibrant blue and indigo accents, and clean typography. The setting is a minimalist, brightly lit tech studio with soft global illumination and professional studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaiHE10NiJXzYmBuaDm2F0r0BrhCA5zPnA_f4xPRpn14BfL2ute8pmILjYjMdcJ0ZJp1__fwWVZ4o6DkTE6N7DdyR84bozybk6CK1T3tM_HvXOwcZy-cNDkP7rCKY3EKfjRbWe7M2dtRRWejW5UuynV0VDgB7nqfRfTOs5-q6j92fN8pUlRfq_lHztB--ZN7aFVqeTiZHMdk17KPvILGOYpmmR74gSO8UyWQDtiGPgMMcvXCHJz48X6-ub23tr-Tav57lUct9j3rCh">
+</div>
+</div>
+<div class="absolute -bottom-10 -right-4 z-30 w-1/3 transform rotate-[6deg] hover:rotate-0 transition-transform duration-700">
+<div class="bg-surface-container-high rounded-[2rem] p-2 shadow-2xl">
+<img class="rounded-[1.8rem] w-full h-auto" data-alt="A modern smartphone mockup showcasing a fully responsive mobile version of a service-based website. The interface features large touch-friendly buttons, a clean bento-grid layout, and smooth gradients. The lighting is soft and airy, fitting a high-end light mode digital aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnkvZn6e4bTgxVX0YYRjEyvIh4XCtiGmEA6rckejtHHxQZcbZTL1rEVKaTJ4Ax2jqby9rZaSCoy1n74D-nQ8LGfocaJjW1-BPrELpkeDM-uE9N8ejxsEyMS77LRkMg4MMiCTpiIhSCCUCrZym8sfO98zJ_BDSQb_T-g5etCvqxQORInP9dj7yC07oC_r8SmZUaTpQ-OqrxoYI618zNTrhvDF0sONU-fvfgiRHcsWN8rD6KV3ik_vXCzpaStzO7F0VyKTbNxwHONV-n">
+</div>
+</div>
+<!-- Ambient Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-primary/10 blur-[120px] -z-10 rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Statistics -->
+<section class="py-16 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-base text-center">
+<div class="reveal p-6 active">
+<div class="font-display-lg text-[48px] text-primary mb-2">100+</div>
+<div class="font-label-md text-on-surface-variant uppercase tracking-widest">Projects Delivered</div>
+</div>
+<div class="reveal p-6 active" style="transition-delay: 100ms;">
+<div class="font-display-lg text-[48px] text-secondary mb-2">100%</div>
+<div class="font-label-md text-on-surface-variant uppercase tracking-widest">Client Satisfaction</div>
+</div>
+<div class="reveal p-6 active" style="transition-delay: 200ms;">
+<div class="font-display-lg text-[48px] text-primary mb-2">24/7</div>
+<div class="font-label-md text-on-surface-variant uppercase tracking-widest">Technical Support</div>
+</div>
+<div class="reveal p-6 active" style="transition-delay: 300ms;">
+<div class="font-display-lg text-[48px] text-secondary mb-2">50+</div>
+<div class="font-label-md text-on-surface-variant uppercase tracking-widest">Happy Clients</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-32 bg-surface-container-low overflow-hidden" id="services">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center max-w-2xl mx-auto mb-20 reveal active">
+<h2 class="font-headline-lg text-headline-lg mb-4">Crafting Digital Excellence</h2>
+<p class="font-body-md text-on-surface-variant">We provide comprehensive digital solutions tailored to elevate your brand presence and drive business growth.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Website Development -->
+<div class="reveal glass-card p-10 rounded-[2rem] hover:shadow-[0_20px_50px_rgba(11,95,255,0.1)] transition-all group active">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[32px]" data-icon="web">web</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Website Development</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Custom-built websites that are lightning fast, responsive, and tailored to your specific business goals.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                            React / Next.js Expert
+                        </li>
+<li class="flex items-center gap-2 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                            Responsive Architecture
+                        </li>
+</ul>
+</div>
+<!-- UI/UX Design -->
+<div class="reveal glass-card p-10 rounded-[2rem] hover:shadow-[0_20px_50px_rgba(11,95,255,0.1)] transition-all group active" style="transition-delay: 150ms;">
+<div class="w-16 h-16 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-8 group-hover:bg-tertiary group-hover:text-on-tertiary transition-all">
+<span class="material-symbols-outlined text-[32px]" data-icon="design_services">design_services</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">UI/UX Design</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Creating intuitive and visually stunning interfaces that provide an exceptional user experience.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+                            Modern Glassmorphism
+                        </li>
+<li class="flex items-center gap-2 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+                            User-Centric Flows
+                        </li>
+</ul>
+</div>
+<!-- SEO Optimization -->
+<div class="reveal glass-card p-10 rounded-[2rem] hover:shadow-[0_20px_50px_rgba(11,95,255,0.1)] transition-all group active" style="transition-delay: 300ms;">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container/10 flex items-center justify-center mb-8 group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-[32px]" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">SEO &amp; Analytics</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Optimizing your web presence to rank higher on search engines and reach more potential customers.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+                            Keyword Strategy
+                        </li>
+<li class="flex items-center gap-2 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+                            Performance Audits
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-32 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="reveal active">
+<h2 class="font-headline-lg text-headline-lg mb-8">Why Businesses Choose Shrivastav Website Studio</h2>
+<div class="space-y-8">
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[20px] mb-2">Fast Loading Speeds</h4>
+<p class="font-body-md text-on-surface-variant">We prioritize performance with clean code and optimized assets for near-instant load times.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-on-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">search</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[20px] mb-2">SEO Friendly Structure</h4>
+<p class="font-body-md text-on-surface-variant">Built-in optimization following the latest Google standards to ensure your site is found.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-tertiary flex items-center justify-center text-on-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">devices</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[20px] mb-2">Fully Responsive</h4>
+<p class="font-body-md text-on-surface-variant">Seamless experiences across mobile, tablet, and desktop guaranteed with modern layouts.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative reveal order-first lg:order-last active">
+<div class="aspect-square rounded-[3rem] bg-surface-container-highest overflow-hidden p-8 border border-outline-variant/30 relative">
+<img class="w-full h-full object-cover rounded-2xl shadow-xl" data-alt="A clean, minimalist high-tech office desk setup with high-end computer monitors displaying code editors and analytics dashboards. Soft morning sunlight streams through large windows, highlighting the premium glass and metal textures. The environment is serene, professional, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx90mT3qqnrs2Jnd1sI-9unnG_fpeLVQjABFHavpq2ZeXC2JnKVlfZ3cK1LrSkXxu3H14KRrfMSlXm0Bt56efuYnbuos8c-HEpcvDM2BHAIW0INBwmuN4w2JbM179_Pzg5HoEFvE-PmoorUcsjXXUFjtcjcRkYY12jlm3Pm-FzSXTbl6Zw0HLOllQXt_FDtqERuVdQAOhWwCplI3ZMZKXzFM-ONuM5u0IHZT--H_TOQHToeiKJbwD-jSV9PhfQVvE8ozOQlXbCXWUt">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+<!-- Floating Card -->
+<div class="absolute -bottom-10 -left-10 glass-card p-6 rounded-2xl shadow-2xl max-w-[240px]">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 bg-success bg-green-500 rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div class="font-headline-sm text-[16px]">99% Score</div>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant">Average Google PageSpeed insight score for our projects.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Work Process -->
+<section class="py-32 bg-surface-container-high/30">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20 reveal active">
+<h2 class="font-headline-lg text-headline-lg">Our Meticulous Process</h2>
+<p class="font-body-md text-on-surface-variant mt-4">From initial thought to a live, high-performing product.</p>
+</div>
+<div class="relative timeline-line flex flex-col gap-16">
+<!-- Step 1 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-between reveal active">
+<div class="md:w-5/12 text-center md:text-right order-2 md:order-1">
+<h4 class="font-headline-sm text-[22px] mb-2">Discussion &amp; Planning</h4>
+<p class="font-body-md text-on-surface-variant">We dive deep into your requirements, target audience, and business goals to draft a winning strategy.</p>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary ring-8 ring-surface-container-highest order-1 md:order-2 mb-4 md:mb-0">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<div class="md:w-5/12 order-3"></div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-between reveal active">
+<div class="md:w-5/12 order-3 md:order-1"></div>
+<div class="z-10 w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container ring-8 ring-surface-container-highest order-1 md:order-2 mb-4 md:mb-0">
+<span class="material-symbols-outlined">brush</span>
+</div>
+<div class="md:w-5/12 text-center md:text-left order-2 md:order-3">
+<h4 class="font-headline-sm text-[22px] mb-2">Design &amp; UX Wireframing</h4>
+<p class="font-body-md text-on-surface-variant">Crafting the visual identity and user journey map for a cohesive and high-conversion experience.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-between reveal active">
+<div class="md:w-5/12 text-center md:text-right order-2 md:order-1">
+<h4 class="font-headline-sm text-[22px] mb-2">Agile Development</h4>
+<p class="font-body-md text-on-surface-variant">Engineering your site using modern frameworks like Next.js and Tailwind CSS for speed and scalability.</p>
+</div>
+<div class="z-10 w-12 h-12 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary ring-8 ring-surface-container-highest order-1 md:order-2 mb-4 md:mb-0">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div class="md:w-5/12 order-3"></div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-between reveal active">
+<div class="md:w-5/12 order-3 md:order-1"></div>
+<div class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary ring-8 ring-surface-container-highest order-1 md:order-2 mb-4 md:mb-0">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div class="md:w-5/12 text-center md:text-left order-2 md:order-3">
+<h4 class="font-headline-sm text-[22px] mb-2">Testing &amp; Launch</h4>
+<p class="font-body-md text-on-surface-variant">Rigorous cross-browser testing and performance audits before we deploy your site to the world.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-32 bg-surface" id="portfolio">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal active">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4">Our Recent Success Stories</h2>
+<p class="font-body-md text-on-surface-variant">Discover how we've helped diverse businesses establish a powerful digital presence.</p>
+</div>
+<a class="font-label-md text-primary flex items-center gap-2 group uppercase tracking-widest" href="#contact">
+                    Start Your Project
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1: AK DJ Services -->
+<div class="reveal group overflow-hidden rounded-[2.5rem] bg-surface-container shadow-sm hover:shadow-2xl transition-all duration-500 active">
+<div class="relative h-64 overflow-hidden">
+<img alt="AK DJ Services" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://i.ibb.co/MxR9PhWf/Screenshot-2026-07-01-203322.png">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+<span class="text-white font-label-md tracking-widest uppercase">Event Management</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-[20px] mb-2">AK DJ Services</h4>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Professional event entertainment booking platform.</p>
+<a class="w-full py-3 rounded-xl border border-primary text-primary font-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all" href="https://him2005hu.github.io/ak-dj-services/" target="_blank">
+                            Live Preview
+                            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Project 2: AKS Portfolio -->
+<div class="reveal group overflow-hidden rounded-[2.5rem] bg-surface-container shadow-sm hover:shadow-2xl transition-all duration-500 active" style="transition-delay: 100ms;">
+<div class="relative h-64 overflow-hidden">
+<img alt="AKS Portfolio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://i.ibb.co/xS81h3LC/Screenshot-2026-07-01-203341.png">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+<span class="text-white font-label-md tracking-widest uppercase">Personal Brand</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-[20px] mb-2">AKS Portfolio</h4>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Modern, minimalist personal showcase website.</p>
+<a class="w-full py-3 rounded-xl border border-primary text-primary font-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all" href="https://aksportfolio.online/" target="_blank">
+                            Live Preview
+                            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Project 3: Photo Studio -->
+<div class="reveal group overflow-hidden rounded-[2.5rem] bg-surface-container shadow-sm hover:shadow-2xl transition-all duration-500 active" style="transition-delay: 200ms;">
+<div class="relative h-64 overflow-hidden">
+<img alt="Photo Studio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" src="https://i.ibb.co/GQdBh4Xj/Screenshot-2026-07-01-203412.png">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+<span class="text-white font-label-md tracking-widest uppercase">Creative Studio</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-[20px] mb-2">Photo Studio</h4>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Elegant photography portfolio with interactive gallery.</p>
+<a class="w-full py-3 rounded-xl border border-primary text-primary font-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all" href="https://him2005hu.github.io/PHOTO/" target="_blank">
+                            Live Preview
+                            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Additional projects hidden/shown in bento grid style -->
+<!-- Project 5: AK Cafe -->
+<div class="reveal group overflow-hidden rounded-[2.5rem] bg-surface-container shadow-sm hover:shadow-2xl transition-all duration-500 active">
+<div class="relative h-64 overflow-hidden">
+<img alt="AK Cafe" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://i.ibb.co/svrCW7tN/Screenshot-2026-07-01-203452.png">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+<span class="text-white font-label-md tracking-widest uppercase">Food &amp; Beverage</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-[20px] mb-2">AK Cafe</h4>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Delectable digital menu and booking for local cafe.</p>
+<a class="w-full py-3 rounded-xl border border-primary text-primary font-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all" href="https://him2005hu.github.io/CAFE-/" target="_blank">
+                            Live Preview
+                            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Project 6: AKS Classes -->
+<div class="reveal group overflow-hidden rounded-[2.5rem] bg-surface-container shadow-sm hover:shadow-2xl transition-all duration-500 active">
+<div class="relative h-64 overflow-hidden">
+<img alt="AKS Classes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://i.ibb.co/21xbV3pN/Screenshot-2026-07-01-203512.png">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+<span class="text-white font-label-md tracking-widest uppercase">Education</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-[20px] mb-2">AKS Classes</h4>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm">Learning management and coaching landing page.</p>
+<a class="w-full py-3 rounded-xl border border-primary text-primary font-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all" href="https://him2005hu.github.io/classes/" target="_blank">
+                            Live Preview
+                            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20 reveal active">
+<h2 class="font-headline-lg text-headline-lg">What Our Clients Say</h2>
+<div class="flex justify-center mt-4 text-secondary">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="reveal glass-card p-10 rounded-3xl relative active">
+<span class="material-symbols-outlined text-[64px] text-primary/10 absolute top-6 right-8">format_quote</span>
+<p class="font-body-md text-on-surface-variant italic mb-8">"The team at Shrivastav Studio transformed our outdated site into a modern powerhouse. Our conversions have increased by 40% since the launch!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">RK</div>
+<div>
+<div class="font-headline-sm text-[16px]">Rajesh Kumar</div>
+<div class="font-label-md text-[12px] text-on-surface-variant uppercase">Founder, TechVision</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="reveal glass-card p-10 rounded-3xl relative active" style="transition-delay: 150ms;">
+<span class="material-symbols-outlined text-[64px] text-primary/10 absolute top-6 right-8">format_quote</span>
+<p class="font-body-md text-on-surface-variant italic mb-8">"Their attention to detail in the UI/UX phase was impressive. They truly understood our brand identity and executed it flawlessly."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center font-bold text-secondary">AM</div>
+<div>
+<div class="font-headline-sm text-[16px]">Anjali Mehta</div>
+<div class="font-label-md text-[12px] text-on-surface-variant uppercase">Creative Director, ArtFlow</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="reveal glass-card p-10 rounded-3xl relative active" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-[64px] text-primary/10 absolute top-6 right-8">format_quote</span>
+<p class="font-body-md text-on-surface-variant italic mb-8">"Lightning fast delivery and exceptional support even after launch. Best web studio we've worked with in years."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center font-bold text-tertiary">SP</div>
+<div>
+<div class="font-headline-sm text-[16px]">Sanjay Patel</div>
+<div class="font-label-md text-[12px] text-on-surface-variant uppercase">CEO, QuickRepair</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 bg-surface overflow-hidden" id="contact">
+  <div class="max-w-container-max mx-auto px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-14 items-start">
+      <div class="reveal active">
+        <span class="inline-flex text-[12px] uppercase tracking-[0.35em] text-secondary mb-4">Get in touch</span>
+        <h2 class="font-display-lg text-display-lg mb-4">Let's Plan Your Shoot</h2>
+        <p class="font-body-lg text-on-surface-variant max-w-2xl">Tell us about your event — we'll get back within a few hours with a professional plan and a fast WhatsApp reply.</p>
+        <div class="mt-10 space-y-4">
+          <div class="rounded-[2rem] border border-outline-variant/50 bg-surface-container-lowest p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-3xl bg-secondary-container/10 text-secondary-container flex items-center justify-center">
+              <span class="material-symbols-outlined">call</span>
+            </div>
+            <div>
+              <p class="font-label-md text-on-surface-variant uppercase tracking-[0.25em] text-[11px] mb-1">Phone</p>
+              <a class="font-headline-sm text-[18px] text-primary hover:underline" href="tel:+919354114810">+91 93541 14810</a>
+            </div>
+          </div>
+          <div class="rounded-[2rem] border border-outline-variant/50 bg-surface-container-lowest p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-3xl bg-tertiary/10 text-tertiary flex items-center justify-center">
+              <span class="material-symbols-outlined">mail</span>
+            </div>
+            <div>
+              <p class="font-label-md text-on-surface-variant uppercase tracking-[0.25em] text-[11px] mb-1">Email</p>
+              <a class="font-headline-sm text-[18px] text-primary hover:underline" href="mailto:himanshukumarshrivastav306@gmail.com">himanshukumarshrivastav306@gmail.com</a>
+            </div>
+          </div>
+          <div class="rounded-[2rem] border border-outline-variant/50 bg-surface-container-lowest p-6 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-3xl bg-green-500/10 text-green-600 flex items-center justify-center">
+              <span class="material-symbols-outlined">chat</span>
+            </div>
+            <div>
+              <p class="font-label-md text-on-surface-variant uppercase tracking-[0.25em] text-[11px] mb-1">WhatsApp</p>
+              <a class="font-headline-sm text-[18px] text-primary hover:underline" href="https://wa.me/919354114810" target="_blank" rel="noreferrer">+91 93541 14810</a>
+            </div>
+          </div>
+          <div class="rounded-[2rem] border border-outline-variant/50 bg-surface-container-lowest p-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-3xl bg-primary/10 text-primary flex items-center justify-center">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div>
+                <p class="font-label-md text-on-surface-variant uppercase tracking-[0.25em] text-[11px] mb-1">Address</p>
+                <a class="font-headline-sm text-[18px] text-primary hover:underline" href="https://www.google.com/maps?q=28.627999,77.351773" target="_blank" rel="noreferrer">Pawan Vihar Khora Colony, Ghaziabad (U.P)</a>
+              </div>
+            </div>
+            <div class="mt-4 overflow-hidden rounded-2xl border border-outline-variant/40">
+              <iframe
+                title="Location map"
+                src="https://www.google.com/maps?q=28.627999,77.351773&z=15&output=embed"
+                class="w-full h-52 border-0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal active">
+        <div class="rounded-[2.5rem] bg-white border border-outline-variant/70 shadow-[0_30px_80px_rgba(15,23,42,0.08)] overflow-hidden">
+          <div class="px-8 py-10">
+            <div class="mb-8">
+              <p class="font-label-md text-secondary uppercase tracking-[0.35em] mb-3">Get in Touch</p>
+              <h3 class="font-headline-sm text-headline-sm">Tell us about your shoot</h3>
+            </div>
+            <form id="contactWhatsAppForm" class="space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input id="contactName" class="w-full rounded-2xl border border-outline-variant/50 bg-surface-container-lowest px-5 py-4 text-on-surface outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10" type="text" placeholder="Your Name" required>
+                <input id="contactPhone" class="w-full rounded-2xl border border-outline-variant/50 bg-surface-container-lowest px-5 py-4 text-on-surface outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10" type="tel" placeholder="Phone Number" required>
+              </div>
+              <input id="contactEmail" class="w-full rounded-2xl border border-outline-variant/50 bg-surface-container-lowest px-5 py-4 text-on-surface outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10" type="email" placeholder="Email">
+              <textarea id="contactMessage" class="w-full rounded-2xl border border-outline-variant/50 bg-surface-container-lowest px-5 py-4 text-on-surface outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10 resize-none" rows="6" placeholder="Tell us about your event or project..."></textarea>
+              <button class="w-full rounded-2xl bg-secondary-container text-on-secondary-container py-4 font-label-md uppercase tracking-widest hover:bg-secondary-container/90 transition" type="submit">Submit via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-white text-slate-900" id="legal">
+  <div class="max-w-container-max mx-auto px-margin-desktop">
+    <div class="grid gap-10 lg:grid-cols-[1.6fr_0.9fr]">
+      <div class="space-y-8">
+        <div class="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-[0_20px_40px_rgba(15,23,42,0.05)]">
+          <p class="font-label-md uppercase tracking-[0.35em] text-primary text-xs mb-3">Privacy Policy</p>
+          <p class="text-sm text-slate-600 leading-7">We respect your privacy and are committed to protecting your personal information. Any details you share through our website are used only for communication, project discussions, and service delivery. We never sell or share your data with third parties without your permission unless required by law.</p>
+        </div>
+        <div class="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-[0_20px_40px_rgba(15,23,42,0.05)]">
+          <p class="font-label-md uppercase tracking-[0.35em] text-primary text-xs mb-3">Terms & Conditions</p>
+          <p class="text-sm text-slate-600 leading-7">By using our website and services, you agree to our terms and conditions. Project timelines, pricing, and deliverables are discussed before work begins. All website content, designs, and source code remain protected under copyright laws.</p>
+        </div>
+        <div class="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-[0_20px_40px_rgba(15,23,42,0.05)]">
+          <p class="font-label-md uppercase tracking-[0.35em] text-primary text-xs mb-3">No Refund Policy</p>
+          <p class="text-sm text-slate-600 leading-7">All payments made to Shrivastav Web Studio are final. <strong>Domain registration, web hosting, SSL certificates, third-party software licenses, and other digital products are non-refundable once purchased or activated.</strong> Refund requests for completed or partially completed services will not be accepted. Please review your order carefully before making payment.</p>
+        </div>
+        <div class="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-[0_20px_40px_rgba(15,23,42,0.05)]">
+          <p class="font-label-md uppercase tracking-[0.35em] text-primary text-xs mb-3">FAQ</p>
+          <p class="text-sm text-slate-600 leading-7">Have questions? Visit our FAQ section to find answers about our website design, development process, pricing, timelines, hosting, maintenance, and other commonly asked questions.</p>
+        </div>
+        <div class="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-[0_20px_40px_rgba(15,23,42,0.05)]">
+          <p class="font-label-md uppercase tracking-[0.35em] text-primary text-xs mb-3">Sitemap</p>
+          <p class="text-sm text-slate-600 leading-7">Our sitemap provides a complete overview of all pages available on our website, making it easy to navigate and quickly find the information you need.</p>
+        </div>
+      </div>
+      <div class="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-[0_20px_40px_rgba(15,23,42,0.05)]">
+        <p class="font-label-md uppercase tracking-[0.35em] text-primary text-xs mb-3">Contact Support</p>
+        <h3 class="font-headline-sm text-2xl mb-4">Need assistance?</h3>
+        <p class="text-sm text-slate-600 leading-7 mb-6">Our support team is available to help with project inquiries, technical issues, website maintenance, and general questions. Contact us via email or WhatsApp, and we'll respond as quickly as possible.</p>
+        <button type="button" onclick="document.getElementById('supportNote').classList.toggle('hidden')" class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary/90">Show support note</button>
+        <div id="supportNote" class="mt-5 hidden rounded-3xl border border-slate-200 bg-white p-5 text-sm text-slate-600 shadow-sm">
+          Quick note: Click the WhatsApp or email link in the contact section to receive a fast reply from our team. We aim to answer all support requests within a few hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="bg-white border-t border-slate-200 py-14 text-slate-900">
+  <div class="max-w-container-max mx-auto px-margin-desktop">
+    <div class="grid grid-cols-1 gap-6 mb-10">
+      <div class="rounded-[24px] border border-slate-200 bg-white p-7 shadow-[0_24px_40px_rgba(15,23,42,0.06)]">
+        <div class="flex items-center gap-4">
+          <img src="https://i.ibb.co/ynKPzJxr/logo.png" alt="Shrivastav Web Studio logo" class="h-14 w-14 rounded-[18px] border border-primary/30 bg-slate-50 p-2 object-contain">
+          <div>
+            <p class="text-xl font-semibold tracking-tight">Shrivastav <span class="text-primary">Web Studio</span></p>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Building premium websites, brands & digital experiences.</p>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <a href="#home" class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs text-slate-700 transition hover:bg-primary/10">Home</a>
+          <a href="#about" class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs text-slate-700 transition hover:bg-primary/10">About</a>
+          <a href="#services" class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs text-slate-700 transition hover:bg-primary/10">Services</a>
+          <a href="#portfolio" class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs text-slate-700 transition hover:bg-primary/10">Portfolio</a>
+          <a href="#pricing" class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs text-slate-700 transition hover:bg-primary/10">Pricing</a>
+          <a href="#contact" class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs text-slate-700 transition hover:bg-primary/10">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_20px_30px_rgba(15,23,42,0.06)]">
+      <div class="grid gap-3 lg:grid-cols-[1fr_1.5fr_1fr] items-center text-xs text-slate-600">
+        <div class="text-center lg:text-left">
+          <p class="font-semibold text-slate-900">© 2026 Shrivastav Web Studio. All Rights Reserved.</p>
+        </div>
+        <div class="flex flex-col items-center gap-2 lg:flex-row lg:justify-center lg:gap-3">
+          <span class="text-slate-500">Made with <span class="text-primary">❤️</span> in India</span>
+          <span class="hidden lg:block">|</span>
+          <div class="flex flex-wrap items-center justify-center gap-2">
+            <a href="#" class="transition hover:text-primary">Privacy Policy</a>
+            <span class="text-slate-300">|</span>
+            <a href="#" class="transition hover:text-primary">Terms & Conditions</a>
+            <span class="text-slate-300">|</span>
+            <a href="#" class="transition hover:text-primary">Cookies</a>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-3 text-slate-600 text-xs">
+          <a href="https://www.linkedin.com/in/himanshu-kumar-2a9117373?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 transition hover:border-primary hover:text-primary" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6C1.1 6 0 4.88 0 3.5C0 2.12 1.12 1 2.5 1C3.88 1 4.98 2.12 4.98 3.5ZM0.96 8.97H3.96V24H0.96V8.97ZM7.97 8.97H10.86V11.13H10.92C11.36 10.2 12.43 9.23 14.08 9.23C17.83 9.23 18.74 11.28 18.74 14.47V24H15.74V15.52C15.74 13.76 15.7 11.55 13.47 11.55C11.21 11.55 10.84 13.43 10.84 15.37V24H7.84V8.97H7.97Z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/shrivastav12558?igsh=MWwxeXJxbXJuaGQybw==" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 transition hover:border-primary hover:text-primary" aria-label="Instagram" target="_blank" rel="noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.75 2H16.25C19.54 2 22 4.46 22 7.75V16.25C22 19.54 19.54 22 16.25 22H7.75C4.46 22 2 19.54 2 16.25V7.75C2 4.46 4.46 2 7.75 2ZM12 7.33C9.35 7.33 7.33 9.35 7.33 12C7.33 14.65 9.35 16.67 12 16.67C14.65 16.67 16.67 14.65 16.67 12C16.67 9.35 14.65 7.33 12 7.33ZM18.5 6.08C18.5 5.61 18.08 5.2 17.61 5.2C17.14 5.2 16.72 5.61 16.72 6.08C16.72 6.55 17.14 6.97 17.61 6.97C18.08 6.97 18.5 6.55 18.5 6.08Z"/>
+              <circle cx="12" cy="12" r="3.2"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/1KvSq9bVSK/" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 transition hover:border-primary hover:text-primary" aria-label="Facebook" target="_blank" rel="noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 16.99 5.66 21.13 10.44 21.88V14.89H7.9V12H10.44V9.8C10.44 7.3 11.93 5.99 14.23 5.99C15.28 5.99 16.38 6.18 16.38 6.18V8.66H15.01C13.65 8.66 13.26 9.39 13.26 10.16V12H16.24L15.78 14.89H13.26V21.88C18.04 21.13 22 16.99 22 12Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+        // Simple entrance animations
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach((reveal) => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        // Trigger once on load
+        revealOnScroll();
+
+        // Sticky nav opacity
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.remove('bg-surface/80');
+                header.classList.add('bg-surface', 'shadow-xl');
+            } else {
+                header.classList.add('bg-surface/80');
+                header.classList.remove('bg-surface', 'shadow-xl');
+            }
+        });
+
+        function normalizeContactText(value) {
+            if (value == null) return '';
+            const stringValue = String(value).trim();
+            if (!stringValue) return '';
+
+            try {
+                return decodeURIComponent(stringValue.replace(/\+/g, ' '));
+            } catch (error) {
+                return stringValue;
+            }
+        }
+
+        function buildContactMessage(values) {
+            const name = normalizeContactText(values.name);
+            const phone = normalizeContactText(values.phone);
+            const email = normalizeContactText(values.email);
+            const message = normalizeContactText(values.message);
+
+            return [
+                'Hello, I would like to discuss a new project.',
+                'Please find the details below:',
+                `Name: ${name || 'N/A'}`,
+                `Phone: ${phone || 'N/A'}`,
+                `Email: ${email || 'N/A'}`,
+                `Project details: ${message || 'N/A'}`,
+                'Submitted from website contact form.'
+            ].join('\n');
+        }
+
+        const whatsappNumber = '919354114810';
+        const whatsappForm = document.getElementById('contactWhatsAppForm');
+        if (whatsappForm) {
+            whatsappForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const name = document.getElementById('contactName')?.value;
+                const phone = document.getElementById('contactPhone')?.value;
+                const email = document.getElementById('contactEmail')?.value;
+                const message = document.getElementById('contactMessage')?.value;
+                const text = buildContactMessage({ name, phone, email, message });
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        }
+    </script>
+
+
+</body></html>
+
