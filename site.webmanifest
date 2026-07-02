@@ -1,0 +1,71 @@
+{
+  "name": "Shrivastav Web Studio - Professional Website Development",
+  "short_name": "Shrivastav Studio",
+  "description": "Premium web development, UI/UX design, and SEO optimization services. Fast, modern, responsive websites for businesses across India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0049cc",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/ynKPzJxr/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://i.ibb.co/ynKPzJxr/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://i.ibb.co/ynKPzJxr/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["business", "technology"],
+  "screenshots": [
+    {
+      "src": "https://i.ibb.co/MxR9PhWf/Screenshot-2026-07-01-203322.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/xS81h3LC/Screenshot-2026-07-01-203341.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Portfolio",
+      "short_name": "Portfolio",
+      "description": "View our latest web development projects",
+      "url": "/?tab=portfolio",
+      "icons": [
+        {
+          "src": "https://i.ibb.co/ynKPzJxr/logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with our team",
+      "url": "/?tab=contact",
+      "icons": [
+        {
+          "src": "https://i.ibb.co/ynKPzJxr/logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
