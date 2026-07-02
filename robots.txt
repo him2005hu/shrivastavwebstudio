@@ -1,0 +1,24 @@
+# Robots.txt for Shrivastav Web Studio
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /*.pdf$
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay for other bots
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://shrivastavwebstudio.shop/sitemap.xml
+Sitemap: https://www.shrivastavwebstudio.shop/sitemap.xml
